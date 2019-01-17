@@ -5,5 +5,13 @@
         "http://struts.apache.org/dtds/struts-config_1_3.dtd">
 
 <struts-config>
-    <form-beans ></form-beans>
+    <form-beans >
+        <form-bean name="LoginActionForm" type="com.windlazio.development.actionforms.LoginActionForm"></form-bean>
+    </form-beans>
+    <action-mappings>
+        <action path="/login" name="LoginActionForm" type="com.windlazio.development.actions.LoginAction" scope="request" validate="false">
+            <forward name="OK" path="/WEB-INF/ok.jsp"></forward>
+            <forward name="ERROR" path="/WEB-INF/error.jsp"></forward>
+        </action>
+    </action-mappings>
 </struts-config>
